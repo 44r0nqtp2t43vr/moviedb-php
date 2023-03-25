@@ -8,7 +8,7 @@
 </head>
 <body>
     <table>
-        {{-- <tr>
+        <tr>
             <th>Movie ID</th>
             <th>Movie Title</th>
             <th>Year Made</th>
@@ -18,30 +18,21 @@
             <th>Country Released</th>
             <th></th>
         </tr>
-        <tr>
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-            <td>
-                <button type="submit">Submit</button>
-            </td>
-        </tr> --}}
-        <tr>
-            <td>{{ $data[0]->mov_id }}</td>
-            <td>{{ $data[0]->mov_title }}</td>
-            <td>{{ $data[0]->mov_year }}</td>
-            <td>{{ $data[0]->mov_time }}</td>
-            <td>{{ $data[0]->mov_lang }}</td>
-            <td>{{ $data[0]->mov_dt_rel }}</td>
-            <td>{{ $data[0]->mov_rel_country }}</td>
-            <td>
-                <button type="submit">Submit</button>
-            </td>
-        </tr>
+        @foreach($data as $item)
+            <tr>
+                <td>{{ $item->mov_id }}</td>
+                <td>{{ $item->mov_title }}</td>
+                <td>{{ $item->mov_year }}</td>
+                <td>{{ $item->mov_time }}</td>
+                <td>{{ $item->mov_lang }}</td>
+                <td>{{ $item->mov_dt_rel }}</td>
+                <td>{{ $item->mov_rel_country }}</td>
+                <td>
+                    <a href="{{ route('movie', $item->mov_id) }}"><button>Movie Details</button></a>
+                </td>
+            </tr>
+        @endforeach
     </table>
+    {{ $data->links() }}
 </body>
 </html>

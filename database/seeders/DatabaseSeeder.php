@@ -18,6 +18,16 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call(MovieSeeder::class);
+        $this->call([
+            ActorSeeder::class,
+            DirectorSeeder::class,
+            GenresSeeder::class,
+            MovieCastSeeder::class,
+            MovieDirectionSeeder::class,
+            MovieGenresSeeder::class,
+            MovieSeeder::class,
+            RatingSeeder::class,
+            ReviewerSeeder::class,
+        ]);
     }
 }

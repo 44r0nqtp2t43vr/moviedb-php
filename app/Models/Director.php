@@ -11,6 +11,7 @@ class Director extends Model
     protected $table = 'director';
     public $timestamps = false;
 
+    protected $primaryKey = 'dir_id';
     protected $guarded = ['dir_id'];
-    protected $filltable = ['dir_fname', 'dir_lname'];
+    protected $fillable = ['dir_fname', 'dir_lname'];
 }

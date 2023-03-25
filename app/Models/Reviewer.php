@@ -12,5 +12,5 @@ class Reviewer extends Model
     public $timestamps = false;
 
     protected $guarded = ['rev_id'];
-    protected $filltable = ['rev_name'];
+    protected $fillable = ['rev_name'];
 }

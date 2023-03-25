@@ -12,5 +12,5 @@ class Genres extends Model
     public $timestamps = false;
 
     protected $guarded = ['gen_id'];
-    protected $filltable = ['gen_title'];
+    protected $fillable = ['gen_title'];
 }

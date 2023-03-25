@@ -12,5 +12,5 @@ class Actor extends Model
     public $timestamps = false;
 
     protected $guarded = ['act_id'];
-    protected $filltable = ['act_fname', 'act_lname', 'act_gender'];
+    protected $fillable = ['act_fname', 'act_lname', 'act_gender'];
 }

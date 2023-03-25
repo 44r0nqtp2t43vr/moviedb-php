@@ -18,6 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/movies', [MovieInfoController::class, "listMovies"]);
+Route::get('/movies', [MovieInfoController::class, "listMovies"])->name('movies');
 
-Route::get('/movie/detail/{mov_id}', [MovieInfoController::class, "listData"]);
+Route::get('/movie/detail/{mov_id}', [MovieInfoController::class, "viewDetails"])->name('movie');

@@ -6,7 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    h1 {
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    table {
+        width: 100%;
+    }
+    .pagination {
+        text-align: center;
+    }
+    .pagination > li {
+        display: inline-block;
+        background-color: white;
+        list-style-position: inside;
+        border: 1px solid black;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+</style>
 <body>
+    <h1>Movies 'R' Us Movie Database</h1>
     <table>
         <tr>
             <th>Movie ID</th>

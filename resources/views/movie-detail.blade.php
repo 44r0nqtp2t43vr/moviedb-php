@@ -6,7 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    h1 {
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    th {
+        text-align: left;
+        font-weight: 100;
+    }
+</style>
 <body>
+    <h1>Movie Information</h1>
     <table>
         <tr>
             <th>Movie Title:</th>
@@ -22,27 +33,23 @@
         </tr>
         <tr>
             <th>Directed By:</th>
-            <td>
-                @foreach($data->directors as $director)
-                    {{ $director->dir_fname }} {{ $director->dir_lname}}
-                @endforeach
-            </td>
+            <td>{{ $data->directors[0]->dir_fname }} {{ $data->directors[0]->dir_lname }}</td>
         </tr>
         <tr>
             <th>Starring:</th>
-            <td></td>
+            <td>{{ $data->actors[0]->act_fname }} {{ $data->actors[0]->act_lname }} - {{ $data->actors[0]->pivot->role }}</td>
         </tr>
         <tr>
             <th>Genre:</th>
-            <td></td>
+            <td>{{ $data->genres[0]->gen_title }}</td>
         </tr>
         <tr>
             <th>Rating:</th>
-            <td></td>
+            <td>{{ $data->reviewers[0]->rev_name }}</td>
         </tr>
         <tr>
             <th>Score:</th>
-            <td></td>
+            <td>{{ $data->reviewers[0]->pivot->rev_stars }} stars</td>
         </tr>
     </table>
     <a href="{{ route('movies') }}"><button>Go Back to List</button></a>

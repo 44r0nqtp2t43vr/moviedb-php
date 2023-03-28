@@ -11,6 +11,7 @@ class Genres extends Model
     protected $table = 'genres';
     public $timestamps = false;
 
+    protected $primaryKey = 'gen_id';
     protected $guarded = ['gen_id'];
     protected $fillable = ['gen_title'];
 }

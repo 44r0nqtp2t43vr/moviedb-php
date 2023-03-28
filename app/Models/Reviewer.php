@@ -11,6 +11,7 @@ class Reviewer extends Model
     protected $table = 'reviewer';
     public $timestamps = false;
 
+    protected $primaryKey = 'rev_id';
     protected $guarded = ['rev_id'];
     protected $fillable = ['rev_name'];
 }
